@@ -1,0 +1,732 @@
+:root {
+  font-size: 16px;
+  box-sizing: -webkit-border-box;
+  box-sizing: -moz-border-box;
+  box-sizing: border-box;
+}
+*, ::after, ::before {
+  box-sizing: inherit;
+}
+
+.preloader {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+  /* фоновый цвет */
+  background: #e0e0e0;
+  z-index: 1001;
+}
+
+.preloader__image {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  width: 70px;
+  height: 70px;
+  margin-top: -35px;
+  margin-left: -35px;
+  text-align: center;
+  animation: preloader-rotate 2s infinite linear;
+}
+@-webkit-keyframes preloader-rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@-o-keyframes preloader-rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@-moz-keyframes preloader-rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes preloader-rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.loaded_hiding .preloader {
+  transition: 0.3s opacity;
+  opacity: 0;
+}
+
+.loaded .preloader {
+  display: none;
+}
+
+
+.greeting {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Itim', cursive;
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(to bottom, #6C40FD, #405EF9);
+  color: white;
+  border-bottom: 1px solid white;
+}
+.greeting h1 {
+  font-size: 2.5rem;
+  text-align: center;
+  text-shadow: 0 0 5px black;
+  margin-bottom: 2rem;
+}
+.greeting .wrapper .container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 0.4rem;
+}
+.greeting .wrapper .text {
+  margin: 2rem 0;
+}
+.greeting .wrapper .text .music {
+  position: relative;
+}
+.greeting p {
+  font-size: 1.5rem;
+}
+.greeting .audio-controls {
+  margin-bottom: 2.5rem;
+}
+.greeting p i {
+  padding-left: 0.6rem;
+  font-size: 1.8rem;
+}
+.greeting p .fa-hand-o-right {
+  padding-right: 60px;
+}
+.greeting .wrapper_alien {
+  display: inline-block;
+  position: relative;
+}
+.greeting .alien {
+  display: block;
+}
+.greeting .alien_hand {
+  display: block;
+  position: absolute;
+  bottom: 73px;
+  left: 10px;
+
+  -webkit-transform-origin: 100% 100%;
+  -moz-transform-origin: 100% 100%;
+  -o-transform-origin: 100% 100%;
+  transform-origin: 100% 100%;
+
+  -webkit-animation: alien_hand 0.8s ease-in-out infinite;
+  -o-animation: alien_hand 0.8s ease-in-out infinite;
+  -moz-animation: alien_hand 0.8s ease-in-out infinite;
+  animation: alien_hand 0.8s ease-in-out infinite;
+}
+.greeting a.hidden {
+  display: none;
+}
+.greeting a {
+  position: absolute;
+  bottom: 0;
+  right: 10px;
+  font-size: 2rem;
+  text-shadow: 0 0 5px black;
+  color: inherit;
+  text-decoration: none;
+}
+@-webkit-keyframes alien_hand {
+  0% {
+    transform: rotate(20deg);
+  }
+  50% {
+    transform: rotate(-45deg);
+  }
+  100% {
+    transform: rotate(20deg);
+  }
+}
+@-moz-keyframes alien_hand {
+  0% {
+    transform: rotate(20deg);
+  }
+  50% {
+    transform: rotate(-45deg);
+  }
+  100% {
+    transform: rotate(20deg);
+  }
+}
+@-o-keyframes alien_hand {
+  0% {
+    transform: rotate(20deg);
+  }
+  50% {
+    transform: rotate(-45deg);
+  }
+  100% {
+    transform: rotate(20deg);
+  }
+}
+@keyframes alien_hand {
+  0% {
+    transform: rotate(20deg);
+  }
+  50% {
+    transform: rotate(-45deg);
+  }
+  100% {
+    transform: rotate(20deg);
+  }
+}
+
+.sky_clouds {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(to bottom, #405EF9, #5287FE);
+  border-bottom: 1px solid white;
+  overflow: hidden;
+}
+.flying_object {
+  display: block;
+  position: absolute;
+}
+
+.sky_clouds .dirigible {
+  bottom: calc(100vh / 2 + 30px);
+  right: -262px;
+
+  -webkit-animation: dirigible 25s linear infinite;
+  -o-animation: dirigible 25s linear infinite;
+  -moz-animation: dirigible 25s linear infinite;
+  animation: dirigible 25s linear infinite; 
+}
+@-webkit-keyframes dirigible {
+  100% {
+    right: calc(100vw + 262px);
+  }
+}
+@-moz-keyframes dirigible {
+  100% {
+    right: calc(100vw + 262px);
+  }
+}
+@-o-keyframes dirigible {
+  100% {
+    right: calc(100vw + 262px);
+  }
+}
+@keyframes dirigible {
+  100% {
+    right: calc(100vw + 262px);
+  }
+}
+
+.sky_clouds .air_baloon {
+  bottom: 10px;
+  left: calc(50vw - 45px);
+
+  -webkit-animation: air_baloon 50s ease-in-out infinite;
+  -o-animation: air_baloon 50s ease-in-out infinite;
+  -moz-animation: air_baloon 50s ease-in-out infinite;
+  animation: air_baloon 50s ease-in-out infinite;   
+}
+@-webkit-keyframes air_baloon {
+  0% {
+    bottom: 10px;
+  }
+  50% {
+    bottom: calc(100vh - 131px);
+  }
+  100% {
+    bottom: 10px;
+  }
+}
+@-moz-keyframes air_baloon {
+  0% {
+    bottom: 10px;
+  }
+  50% {
+    bottom: calc(100vh - 131px);
+  }
+  100% {
+    bottom: 10px;
+  }
+}
+@-o-keyframes air_baloon {
+  0% {
+    bottom: 10px;
+  }
+  50% {
+    bottom: calc(100vh - 131px);
+  }
+  100% {
+    bottom: 10px;
+  }
+}
+@keyframes air_baloon {
+  0% {
+    bottom: 10px;
+  }
+  50% {
+    bottom: calc(100vh - 131px);
+  }
+  100% {
+    bottom: 10px;
+  }
+}
+
+.cloud_1 {
+  top: calc((25vh - 57px) / 2);
+  left: 100vw;
+
+  --animation-end-point: -440px;
+
+  -webkit-animation: cloud 50s linear infinite;
+  -o-animation: cloud 50s linear infinite;
+  -moz-animation: cloud 50s linear infinite;
+  animation: cloud 50s linear infinite; 
+}
+.cloud_2 {
+  top: calc((25vh - 57px) / 2);
+  left: calc(100vw + 170px);
+
+  --animation-end-point: -270px;
+
+  -webkit-animation: cloud 50s linear infinite;
+  -o-animation: cloud 50s linear infinite;
+  -moz-animation: cloud 50s linear infinite;
+  animation: cloud 50s linear infinite; 
+}
+
+.cloud_3 {
+  top: calc(25vh + (25vh - 57px) / 2);
+  left: -100px;
+
+  --animation-end-point: calc(100vw + 240px);
+
+  -webkit-animation: cloud 50s linear infinite;
+  -o-animation: cloud 50s linear infinite;
+  -moz-animation: cloud 50s linear infinite;
+  animation: cloud 50s linear infinite; 
+}
+.cloud_4 {
+  top: calc(25vh + (25vh - 57px) / 2);
+  left: -270px;
+
+  --animation-end-point: calc(100vw + 170px);
+
+  -webkit-animation: cloud 50s linear infinite;
+  -o-animation: cloud 50s linear infinite;
+  -moz-animation: cloud 50s linear infinite;
+  animation: cloud 50s linear infinite; 
+}
+.cloud_5 {
+  top: calc(25vh + (25vh - 57px) / 2);
+  left: -440px;
+
+  --animation-end-point: 100vw;
+
+  -webkit-animation: cloud 50s linear infinite;
+  -o-animation: cloud 50s linear infinite;
+  -moz-animation: cloud 50s linear infinite;
+  animation: cloud 50s linear infinite; 
+}
+
+.cloud_6 {
+  bottom: calc(25vh + (25vh - 57px) / 2);
+  left: 100vw;
+
+  --animation-end-point: -440px;
+
+  -webkit-animation: cloud 50s linear infinite;
+  -o-animation: cloud 50s linear infinite;
+  -moz-animation: cloud 50s linear infinite;
+  animation: cloud 50s linear infinite; 
+}
+.cloud_7 {
+  bottom: calc(25vh + (25vh - 57px) / 2);
+  left: calc(100vw + 170px);
+
+  --animation-end-point: -270px;
+
+  -webkit-animation: cloud 50s linear infinite;
+  -o-animation: cloud 50s linear infinite;
+  -moz-animation: cloud 50s linear infinite;
+  animation: cloud 50s linear infinite; 
+}
+.cloud_8 {
+  bottom: calc(25vh + (25vh - 57px) / 2);
+  left: calc(100vw + 340px);
+
+  --animation-end-point: -100px;
+
+  -webkit-animation: cloud 50s linear infinite;
+  -o-animation: cloud 50s linear infinite;
+  -moz-animation: cloud 50s linear infinite;
+  animation: cloud 50s linear infinite; 
+}
+
+.cloud_9 {
+  bottom: calc((25vh - 57px) / 2);
+  left: -100px;
+
+  --animation-end-point: calc(100vw + 170px);
+
+  -webkit-animation: cloud 50s linear infinite;
+  -o-animation: cloud 50s linear infinite;
+  -moz-animation: cloud 50s linear infinite;
+  animation: cloud 50s linear infinite; 
+}
+.cloud_10 {
+  bottom: calc((25vh - 57px) / 2);
+  left: -270px;
+
+  --animation-end-point: 100vw;
+
+  -webkit-animation: cloud 50s linear infinite;
+  -o-animation: cloud 50s linear infinite;
+  -moz-animation: cloud 50s linear infinite;
+  animation: cloud 50s linear infinite; 
+}
+
+@-webkit-keyframes cloud {
+  100% {
+    left: var(--animation-end-point);
+  }
+}
+@-moz-keyframes cloud {
+  100% {
+    left: var(--animation-end-point);
+  }
+}
+@-o-keyframes cloud {
+  100% {
+    left: var(--animation-end-point);
+  }
+}
+@keyframes cloud {
+  100% {
+    left: var(--animation-end-point);
+  }
+}
+
+
+.parchment_wrapper {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(to bottom, #5287FE, #96DAEC 3%);
+  padding: 0.6rem 0.4rem; 
+  font-family: 'Kalam', cursive;
+  border-bottom: 1px solid white;
+}
+.parchment_wrapper .bee {
+  display: block;
+  position: absolute;
+  left: -200px;
+  bottom: calc(50% - 119px);
+  z-index: 5;
+
+  -webkit-animation-delay: 10s;
+  -o-animation-delay: 10s;
+  -moz-animation-delay: 10s;
+  animation-delay: 10s;
+  
+  -webkit-animation: bee 40s ease-in-out infinite;
+  -o-animation: bee 40s ease-in-out infinite;
+  -moz-animation: bee 40s ease-in-out infinite;
+  animation: bee 40s ease-in-out infinite; 
+}
+.baloons_wrapper {
+  max-width: 31.25rem;
+  margin: 0 auto;
+}
+.baloons {
+  max-width: 100px;
+  max-height: 110px;
+}
+.baloons_left {
+  float: left;
+}
+.baloons_right {
+  float: right;
+}
+.baloons_img {
+  display: block;
+  width: 100%;
+}
+.baloons_wrapper::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.parchment {
+  max-width: 31.25rem;
+  margin: 0 auto;
+  background: url("../photos/parchment.png") no-repeat;
+  background-size: 100% auto;  
+}
+.set_parchment_size {
+  position: relative;
+  width: 100%;
+  padding-top: 151%;
+}
+
+.congrats_text {
+  position: absolute;
+  top: 18%;
+  left: 18%;
+
+  padding-right: 14.5%;
+  line-height: 1.4;
+  color: black;
+}
+.congrats_text h1 {
+  font-weight: bold;
+  font-size: 1.6rem;
+  margin-bottom: 2rem;
+}
+.congrats_text p {
+  font-size: 1.3rem;
+  font-weight: 500;
+}
+.congrats_text p + p {
+  margin-top: 1.2rem;
+}
+
+@-webkit-keyframes bee {
+  100% {
+    left: 100vw;
+  }
+}
+@-moz-keyframes bee {
+  100% {
+    left: 100vw;
+  }
+}
+@-o-keyframes bee {
+  100% {
+    left: 100vw;
+  }
+}
+@keyframes bee {
+  100% {
+    left: 100vw;
+  }
+}
+
+
+.camping {  
+  width: 100%;
+  height: 100vh;
+}
+.camping .wrapper {
+  position: relative;
+  overflow: hidden;
+  background: url("../photos/camping.svg") no-repeat center bottom;  
+}
+.camping .wrapper .sun  {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 1;
+  width: 30vh;
+}
+.camping .wrapper .cloud_1,
+.camping .wrapper .cloud_2,
+.camping .wrapper .cloud_3,
+.camping .wrapper .cloud_4,
+.camping .wrapper .cloud_5 {
+  z-index: 2;
+}
+.camping a {
+  position: absolute;
+  color: white;
+  text-decoration: none;
+  font-family: 'Itim', cursive;
+}
+.camping .copyright {
+  bottom: 1%;
+  left: 2%;
+}
+.camping .licenses {
+  bottom: 1%;
+  right: 2%;
+}
+
+@media (max-width: 1000px) {
+  .sky_clouds .dirigible {
+    -webkit-animation-duration: 15s;
+    -o-animation-duration: 15s;
+    -moz-animation-duration: 15s;
+    animation-duration: 15s; 
+  }
+  .parchment_wrapper .bee {
+    -webkit-animation-duration: 15s;
+    -o-animation-duration: 15s;
+    -moz-animation-duration: 15s;
+    animation-duration: 15s; 
+  }
+}
+
+/*For camping*/
+@media screen and (orientation: landscape) {
+  .camping .wrapper {
+    width: 100vh;
+    height: 100vh;
+    margin: 0 auto;
+    background-size: 100vh 100vh;
+  }
+
+  .camping .cloud_1 {
+    top: calc((25vh - 57px) / 2);
+    left: 100%;
+
+    --animation-end-point: -270px;
+
+    -webkit-animation: cloud 50s linear infinite;
+    -o-animation: cloud 50s linear infinite;
+    -moz-animation: cloud 50s linear infinite;
+    animation: cloud 50s linear infinite; 
+  }
+  .camping .cloud_2 {
+    top: calc((25vh - 57px) / 2);
+    left: calc(100% + 170px);
+
+    --animation-end-point: -100px;
+
+    -webkit-animation: cloud 50s linear infinite;
+    -o-animation: cloud 50s linear infinite;
+    -moz-animation: cloud 50s linear infinite;
+    animation: cloud 50s linear infinite; 
+  }
+
+  .camping .cloud_3 {
+    top: 25vh;
+    left: -100px;
+
+    --animation-end-point: calc(100% + 340px);
+
+    -webkit-animation: cloud 50s linear infinite;
+    -o-animation: cloud 50s linear infinite;
+    -moz-animation: cloud 50s linear infinite;
+    animation: cloud 50s linear infinite; 
+  }
+  .camping .cloud_4 {
+    top: 25vh;
+    left: -270px;
+
+    --animation-end-point: calc(100% + 170px);
+
+    -webkit-animation: cloud 50s linear infinite;
+    -o-animation: cloud 50s linear infinite;
+    -moz-animation: cloud 50s linear infinite;
+    animation: cloud 50s linear infinite; 
+  }
+  .camping .cloud_5 {
+    top: 25vh;
+    left: -440px;
+
+    --animation-end-point: 100%;
+
+    -webkit-animation: cloud 50s linear infinite;
+    -o-animation: cloud 50s linear infinite;
+    -moz-animation: cloud 50s linear infinite;
+    animation: cloud 50s linear infinite; 
+  }
+
+}
+@media screen and (orientation: portrait) {
+  .camping .wrapper {
+    width: 100%;
+    height: 100vh;
+    background-color: #96DAEC;
+    background-size: 100% auto;
+  }
+}
+
+/*For parchment*/
+@media (min-width: 400px) and (max-width: 499px) {
+  .parchment {
+    background: url("../photos/parchment_2.png") no-repeat;
+    background-size: 100% auto;
+  }
+  .set_parchment_size {
+    padding-top: 201%;
+  }
+  .congrats_text {
+    top: 13%;
+  }
+}
+
+@media (min-width: 360px) and (max-width: 399px) {
+  .parchment {
+    background: url("../photos/parchment_3.png") no-repeat;
+    background-size: 100% auto;
+  }
+  .set_parchment_size {
+    padding-top: 251%;
+  }
+  .congrats_text {
+    top: 11%;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 359px) {
+  .parchment {
+    background: url("../photos/parchment_4.png") no-repeat;
+    background-size: 100% auto;
+  }
+  .set_parchment_size {
+    padding-top: 301%;
+  }
+  .congrats_text {
+    top: 10%;
+  }
+}
+
+@media (max-width: 280px) {
+  .parchment {
+    background: url("../photos/parchment_5.png") no-repeat;
+    background-size: 100% auto;
+  }
+  .set_parchment_size {
+    padding-top: 401%;
+  }
+  .congrats_text {
+    top: 7%;
+  }
+}
+
+
+
+#licensesPage {
+  background: url("../photos/bricks.png");
+  font-family: 'Itim', cursive;
+  font-size: 1.5rem;
+}
+#licensesPage .licensesPage_container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 2rem 1.9rem;
+  padding-right: 1rem;
+  padding-bottom: 4rem;
+}
+#licensesPage .licensesPage_container h1 {
+  font-size: 2rem;
+  text-align: center;
+  text-decoration: underline;
+  margin-bottom: 2rem;
+}
+#licensesPage .licensesPage_container ul {
+  list-style: square;
+}
+#licensesPage .licensesPage_container li + li {
+  margin-top: 1rem;
+}
